@@ -63,7 +63,7 @@
 ## 데이터 종류(자료형)
   ###
   - String (문자 데이터) : 따옴표를 사용한다.
- ```HTML
+ ``` JAVA
   let myNmae = "mindong";
   let email = 'dullini0205@gmail.com';
   let hello = 'Hello${myName}?!'
@@ -73,7 +73,7 @@
   console.log(hello);  // Hello  mindong?!
  ```
   - Number (숫자 데이터) : 정수 및 부동 소수점 숫자를 나타냅니다.
- ```
+ ``` JAVA
   let num = 123;
   let opaciy = 1.57;
   
@@ -81,7 +81,7 @@
   console.log(opaciy);  //1.57
  ```
   - Boolean (불린 데이터) : true,false 두 가지 값밖에 없는 논리 데이터입니다.
- ```
+ ``` JAVA
   let checked = true;
   let isShow = false;
   
@@ -89,7 +89,7 @@
   console.log(isShow);  //false
  ```
   - Undefined : 값이 할당되지 않은 상태를 나타냅니다.
- ```
+ ``` JAVA
   let undef; // 값이 없는 상태를 undefined 라는 하나의 데이터로 나타낸다.
   let obj = {abx: 123};
   console.log(undef);   //undefined
@@ -97,11 +97,24 @@
   console.log(obj.x);   //undefined
  ```
   - Null :  어떤 값이 의도적으로 비어있음을 의미한다.
-  ```
+ ``` JAVA
   let empty = null;
   console.log(empty); // null
+ ```
+  - Object (객체 데이터) : 여러 데이터를 Key:Value 형태로 저장합니다. {}
+ ``` JAVA
+  let user = {
+    //key: Value,
+    name : 'min'
+    age : 85,
+    isValid: true
+  };
+  console.log(user.name); // min
   ```
-  - Object
-  - Array
+  - Array (배열 데이터) : 여러 데이터를 순차적으로 저장합니다.[]
+ ``` JAVA
+  let fruits = ['apple','banana','cherry'];
+  console.log(fruits[0]); // apple
+  ```  
 </div>
 </details>
