@@ -41,7 +41,67 @@
 <summary> JS 선행 </summary>
 <div markdown="1">
   
-----------
-    
+## 표기법
+###
+  - dash - case(kebab-case)  
+  : '-'를 사용해 컴퓨터는 하나로 인식하는 단어를 사람이 보기에 여러 단어로 읽을 수 있게 구분
+  - snake_case              
+  : '_'를 사용해 인식할 수 있는 여러 단어를 하나로 묶는다.
+  - camelCase            
+   : 낙타 표기법이라고도 하고 대문자로 여러 단어를 하나의 단어로 컴퓨터에게 인식 시켜줄 때 사용
+  - ParcelCase          
+   : camelCase와 비슷하지만 처음 오는 문자가 대문자로 사용한다.
+   - Zero-based Numbering
+    : 특수한 경우를 제외하고 0부터 숫자를 시작한다.
+## 주석
+  - //한 줄 메모
+  - /*한 줄 메모*/
+  - /**
+      *여러 줄 메모
+      */ (ctrl +'/')
+  
+## 데이터 종류(자료형)
+  ###
+  - String (문자 데이터) : 따옴표를 사용한다.
+ ```HTML
+  let myNmae = "mindong";
+  let email = 'dullini0205@gmail.com';
+  let hello = 'Hello${myName}?!'
+  
+  console.log(myNmae); // mindong
+  console.log(email);  // dullini0205@gmail.com
+  console.log(hello);  // Hello  mindong?!
+ ```
+  - Number (숫자 데이터) : 정수 및 부동 소수점 숫자를 나타냅니다.
+ ```
+  let num = 123;
+  let opaciy = 1.57;
+  
+  console.log(num); // 123
+  console.log(opaciy);  //1.57
+ ```
+  - Boolean (불린 데이터) : true,false 두 가지 값밖에 없는 논리 데이터입니다.
+ ```
+  let checked = true;
+  let isShow = false;
+  
+  console.log(checked); //true
+  console.log(isShow);  //false
+ ```
+  - Undefined : 값이 할당되지 않은 상태를 나타냅니다.
+ ```
+  let undef; // 값이 없는 상태를 undefined 라는 하나의 데이터로 나타낸다.
+  let obj = {abx: 123};
+  console.log(undef);   //undefined
+  console.log(obj.abx); //123
+  console.log(obj.x);   //undefined
+ ```
+  - Null :  어떤 값이 의도적으로 비어있음을 의미한다.
+  ```
+  let empty = null;
+  console.log(empty); // null
+  ```
+  - Object
+  - Array
 </div>
 </details>
