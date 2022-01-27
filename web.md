@@ -116,16 +116,19 @@
   let fruits = ['apple','banana','cherry'];
   console.log(fruits[0]); // apple
   ```  
- ## 변수(데이터를 저장하고 참조하는 데이터의 이름)
+ ## 
+  - 변수데이터를 저장하고 참조하는 데이터의 이름
   - let :  값(데이터)의 재할당 가능!
   - const : 값(데이터)의 재할당 불가능!
- ## 예약어 (특별한 의미를 가지고 있어, 변수나 함수 이름등으로 사용할 수 없는 단어)
+ ## 예약어 
+  - 특별한 의미를 가지고 있어, 변수나 함수 이름등으로 사용할 수 없는 단어
   - Reserved Word
  ``` JAVA
   let this = 'hello'; //SyntaxError
   let if = 123; //SyntaxError
  ```
- ## 함수 (특정 동작을 수행하는 일부 코드의 집합)
+ ## 함수 
+  - 특정 동작을 수행하는 일부 코드의 집합
   - function
 ``` JAVA 
   function helloF(){ //함수 선언
