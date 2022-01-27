@@ -116,5 +116,38 @@
   let fruits = ['apple','banana','cherry'];
   console.log(fruits[0]); // apple
   ```  
+ ## 변수(데이터를 저장하고 참조하는 데이터의 이름)
+  - let :  값(데이터)의 재할당 가능!
+  - const : 값(데이터)의 재할당 불가능!
+ ## 예약어 (특별한 의미를 가지고 있어, 변수나 함수 이름등으로 사용할 수 없는 단어)
+  - Reserved Word
+ ``` JAVA
+  let this = 'hello'; //SyntaxError
+  let if = 123; //SyntaxError
+ ```
+ ## 함수 (특정 동작을 수행하는 일부 코드의 집합)
+  - function
+``` JAVA 
+  function helloF(){ //함수 선언
+  //실행 코드
+  console.log(1234); //명령이 들어있다
+  }
+  // 함수 호출
+  helloF(); // 1234
+```
+  ### 기명(이름이 있는) 함수 *함수를 선언한다.
+  ``` JAVA 
+    function hello(){
+      console.log('HEllo~');
+    }
+  hello();
+  ```
+  ### 익명(이름이 없는) 함수 *함수를 표현한다.(호출불가-> 데이터나 변수에 활용)
+   ``` JAVA 
+    let world = function (){
+      console.log('MEllo~');
+    }
+    world();
+  ```
 </div>
 </details>
