@@ -43,15 +43,15 @@
   
 ## 표기법
 ###
-  - dash - case(kebab-case)  
+###  ▪ dash - case(kebab-case)  
   : '-'를 사용해 컴퓨터는 하나로 인식하는 단어를 사람이 보기에 여러 단어로 읽을 수 있게 구분
-  - snake_case              
+###  ▪ snake_case              
   : '_'를 사용해 인식할 수 있는 여러 단어를 하나로 묶는다.
-  - camelCase            
+###  ▪ camelCase            
    : 낙타 표기법이라고도 하고 대문자로 여러 단어를 하나의 단어로 컴퓨터에게 인식 시켜줄 때 사용
-  - ParcelCase          
+###  ▪ ParcelCase          
    : camelCase와 비슷하지만 처음 오는 문자가 대문자로 사용한다.
-   - Zero-based Numbering
+###  ▪ Zero-based Numbering
     : 특수한 경우를 제외하고 0부터 숫자를 시작한다.
 ## 주석
   - //한 줄 메모
@@ -135,14 +135,16 @@
   // 함수 호출
   helloF(); // 1234
 ```
-  ### 기명(이름이 있는) 함수 *함수를 선언한다.
+  ### 
+  - 기명(이름이 있는) 함수 *함수를 선언한다.
   ``` JAVA 
     function hello(){
       console.log('HEllo~');
     }
   hello();
   ```
-  ### 익명(이름이 없는) 함수 *함수를 표현한다.(호출불가-> 데이터나 변수에 활용)
+  ### 
+  - 익명(이름이 없는) 함수 *함수를 표현한다.(호출불가-> 데이터나 변수에 활용)
    ``` JAVA 
     let world = function (){
       console.log('MEllo~');
