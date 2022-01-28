@@ -206,6 +206,8 @@
       console.log(index, boxEl); //콘솔창에 index, boxEl 값 출력
     });
 ```   
+  ![image](https://user-images.githubusercontent.com/87464723/151527738-3c3bf134-cca8-46ba-a1c8-38b42aa341bf.png)
+
 ``` Java
   const boxEl = document.querySelector('.box');
   
@@ -215,7 +217,7 @@
   //Setter, 값을 지정하는 용도
   boxEl.textContent = 'MINZZUNG?!';
   console.log(boxEl.TextContent);
-  
+```  
   
  
 </div>
