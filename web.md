@@ -167,8 +167,22 @@
     console.log('checked!')//실행x
     }
   ```  
- ## DOM API
-  Document Object Model, Application Programming Interface   
-  HTML을 제어할 때 사용하는 명령들의 개념이다.
+ ## DOM API (Document Object Model, Application Programming Interface)    
+  자바스크립트에서 HTML을 제어할 때 사용하는 명령들이라는 의미이다.   
+   ``` JAVA
+    // HTML 요소(Element) 1개 검색/찾기 (먼저 찾은 요소 1개만 반환)
+    const boxEl = document.querySelector('.box');
+
+    //HTML 요소에 적용할 수 있는 메소드 !
+    boxEl.addEventListener();
+    //인수추가가능
+    boxEl.addEventListener(1,2);
+    //1 - 이벤트 (Event, 상황)
+    boxEl.addEventListener('Click',2);
+    //2 - 핸들러 (Handler, 실행할 함수)
+    boxEl.addEventListener('Click',function() {
+      console.log('Click~!');
+    });
+  ```   
 </div>
 </details>
