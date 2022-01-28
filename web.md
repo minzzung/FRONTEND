@@ -55,10 +55,10 @@
    : 특수한 경우를 제외하고 0부터 숫자를 시작한다.
 ## 주석
   - //한 줄 메모
-  - /*한 줄 메모*/
-  - /**
-      *여러 줄 메모
-      */ (ctrl +'/')
+  - /* 한 줄 메모 */
+  - /**   
+      *여러 줄 메모   
+      */ (ctrl +'/')   
   
 ## 데이터 종류(자료형)
   ###
@@ -154,5 +154,21 @@
     }
     world();
   ```
+ ## 조건문 
+   조건(true,false)의 결과에 따라 다른 코드를 실행하는 구문  
+   ``` JAVA 
+    let isShow = true;
+    let checked = false;
+    
+    if(isShow){
+      console.log('Show~~'); //Show~~
+    }
+    if(checked){
+    console.log('checked!')//실행x
+    }
+  ```  
+ ## DOM API
+  Document Object Model, Application Programming Interface   
+  HTML을 제어할 때 사용하는 명령들의 개념이다.
 </div>
 </details>
