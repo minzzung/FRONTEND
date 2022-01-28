@@ -169,7 +169,7 @@
   ```  
  ## DOM API (Document Object Model, Application Programming Interface)    
   자바스크립트에서 HTML을 제어할 때 사용하는 명령들이라는 의미이다.   
-   ``` JAVA
+ ``` JAVA
     // HTML 요소(Element) 1개 검색/찾기 (먼저 찾은 요소 1개만 반환)
     const boxEl = document.querySelector('.box');
 
@@ -183,6 +183,40 @@
     boxEl.addEventListener('Click',function() {
       console.log('Click~!');
     });
-  ```   
+```   
+![image](https://user-images.githubusercontent.com/87464723/151526413-64ebca0a-c99e-4e32-9dad-cd50666314ea.png)
+
+``` JAVA
+    // HTML 요소(Element) 모두 검색하기
+    const boxEls = document.querySelectorAll('.box');
+    console.log(boxEls);
+
+    // 찾은 요소들 반복해서 함수 실행! (유사배열)
+    // 익명의 함수를 인수로 추가 
+    boxEls.forEach(funcion() {});
+  
+    // 첫 번째 매개변수(boxEl) : 반복 중인 요소.
+    // 두 번째 매개변수(index) : 반복 중인 번호
+    boxEls.forEach(funcion(boxEl, index) {});
+  
+    // 출력!
+    // 반복하면서 익명의 함수가 실행되는데 boxEl, index로 내부에서 로직을 추가할 수 있다.
+    boxEls.forEach(funcion(boxEl, index) { // boxEl에는 반복중인 하나의 요소가 들어있고 
+      boxEl.classList.add('order-${index + 1}'); //classList에 어떤 문자데이터 요소를 추가하고  index에 +1해서 보관
+      console.log(index, boxEl); //콘솔창에 index, boxEl 값 출력
+    });
+```   
+``` Java
+  const boxEl = document.querySelector('.box');
+  
+  //Getter, 값을 얻는 용도
+  console.log(boxEl.textContent); // Box!!
+  
+  //Setter, 값을 지정하는 용도
+  boxEl.textContent = 'MINZZUNG?!';
+  console.log(boxEl.TextContent);
+  
+  
+ 
 </div>
 </details>
