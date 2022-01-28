@@ -218,7 +218,18 @@
   boxEl.textContent = 'MINZZUNG?!';
   console.log(boxEl.TextContent);
 ```  
+ ## 메소드 체이닝  
+  메소드가 체인 형식으로 연결되어있다
+```
+  const a = 'Hello~';
+  // split : 문자를 인수 기준으로 쪼개서 배열로 반환.
+  // reverse : 배열을 뒤집기.
+  // join : 배열을 인수 기준으로 문자로 변합해 반환.
+  const b = a.split('').reverse().join(''); //메소드 체이닝..
   
+  console.log(a); // Hello~
+  console.log(b); // ~olleH
+```
  
 </div>
 </details>
