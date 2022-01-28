@@ -63,7 +63,7 @@
 ## 데이터 종류(자료형)
   ###
   - String (문자 데이터) : 따옴표를 사용한다.
- ``` JAVA
+ ```javascript
   let myNmae = "mindong";
   let email = 'dullini0205@gmail.com';
   let hello = 'Hello${myName}?!'
@@ -73,7 +73,7 @@
   console.log(hello);  // Hello  mindong?!
  ```
   - Number (숫자 데이터) : 정수 및 부동 소수점 숫자를 나타냅니다.
- ``` JAVA
+ ```javascript
   let num = 123;
   let opaciy = 1.57;
   
@@ -81,7 +81,7 @@
   console.log(opaciy);  //1.57
  ```
   - Boolean (불린 데이터) : true,false 두 가지 값밖에 없는 논리 데이터입니다.
- ``` JAVA
+ ```javascript
   let checked = true;
   let isShow = false;
   
@@ -89,7 +89,7 @@
   console.log(isShow);  //false
  ```
   - Undefined : 값이 할당되지 않은 상태를 나타냅니다.
- ``` JAVA
+ ```javascript
   let undef; // 값이 없는 상태를 undefined 라는 하나의 데이터로 나타낸다.
   let obj = {abx: 123};
   console.log(undef);   //undefined
@@ -97,12 +97,12 @@
   console.log(obj.x);   //undefined
  ```
   - Null :  어떤 값이 의도적으로 비어있음을 의미한다.
- ``` JAVA
+ ```javascript
   let empty = null;
   console.log(empty); // null
  ```
   - Object (객체 데이터) : 여러 데이터를 Key:Value 형태로 저장합니다. {}
- ``` JAVA
+ ```javascript
   let user = {
     //key: Value,
     name : 'min'
@@ -112,7 +112,7 @@
   console.log(user.name); // min
   ```
   - Array (배열 데이터) : 여러 데이터를 순차적으로 저장합니다.[]
- ``` JAVA
+ ```javascript
   let fruits = ['apple','banana','cherry'];
   console.log(fruits[0]); // apple
   ```  
@@ -123,14 +123,14 @@
  ## 예약어 
   - 특별한 의미를 가지고 있어, 변수나 함수 이름등으로 사용할 수 없는 단어
   - Reserved Word
- ``` JAVA
+ ```javascript
   let this = 'hello'; //SyntaxError
   let if = 123; //SyntaxError
  ```
  ## 함수 
   - 특정 동작을 수행하는 일부 코드의 집합
   - function
-``` JAVA 
+```javascript 
   function helloF(){ //함수 선언
   //실행 코드
   console.log(1234); //명령이 들어있다
@@ -140,7 +140,7 @@
 ```
   ### 
   - 기명(이름이 있는) 함수  :: 함수를 선언한다.
-  ``` JAVA 
+  ```javascript
     function hello(){
       console.log('HEllo~');
     }
@@ -156,7 +156,7 @@
   ```
  ## 조건문 
    조건(true,false)의 결과에 따라 다른 코드를 실행하는 구문  
-   ``` JAVA 
+   ```javascript
     let isShow = true;
     let checked = false;
     
@@ -169,7 +169,7 @@
   ```  
  ## DOM API (Document Object Model, Application Programming Interface)    
   자바스크립트에서 HTML을 제어할 때 사용하는 명령들이라는 의미이다.   
- ``` JAVA
+ ```javascript
     // HTML 요소(Element) 1개 검색/찾기 (먼저 찾은 요소 1개만 반환)
     const boxEl = document.querySelector('.box');
 
@@ -186,7 +186,7 @@
 ```   
 ![image](https://user-images.githubusercontent.com/87464723/151526413-64ebca0a-c99e-4e32-9dad-cd50666314ea.png)
 
-``` JAVA
+```javascript
     // HTML 요소(Element) 모두 검색하기
     const boxEls = document.querySelectorAll('.box');
     console.log(boxEls);
@@ -208,7 +208,7 @@
 ```   
   ![image](https://user-images.githubusercontent.com/87464723/151527738-3c3bf134-cca8-46ba-a1c8-38b42aa341bf.png)
 
-``` Java
+```javascript
   const boxEl = document.querySelector('.box');
   
   //Getter, 값을 얻는 용도
@@ -220,7 +220,7 @@
 ```  
  ## 메소드 체이닝  
   메소드가 체인 형식으로 연결되어있다
-```
+```javascript
   const a = 'Hello~';
   // split : 문자를 인수 기준으로 쪼개서 배열로 반환.
   // reverse : 배열을 뒤집기.
