@@ -5,6 +5,7 @@ body{
   font-size: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
 }
 img{
   display: block;
@@ -17,10 +18,65 @@ a{ /*밑줄제거*/
   margin: 0 auto; /* 위아래 값은 없고 좌우는 브라우저가 자동으로 설정-> 가운데 정렬*/ 
   position: relative;
 }
+.btn{ /* 자세히 보기 버튼 스타일 */ 
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color:#333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: .4s;
+}
+.btn:hover{ /* 눌렀을때 버튼스타일 */ 
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse { /* reverse인 특정요소는 이미 배경이 회색 */ 
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover { /*  */ 
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18 ;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  border-color: #592B18 ;
+}
+.btn.btn--gold {
+  color: #D9AA8A;
+  border-color: #D9AA8A ;
+}
+.btn.btn--gold:hover{
+  color: #fff;
+  border-color: #D9AA8A ;
+}
+.btn.btn--white {
+  color: #FFF;
+  border-color: #FFF ;
+}
+.btn.btn--white:hover{
+  color: #333;
+  border-color: #FFF ;
+}
+
 /* HEADER */ 
 header{
+  width: 100%;/*페이지를 최대한 활용 많이 할 수 있도록*/
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  position: fixed; /*위치상의 부모요소로 기준이 된다.*/
+  top: 0;
+  z-index: 9;
 }
 
 header > .inner{ /*inner라는 공통적인 요소를 분리시켜줄 것이다*/
@@ -177,4 +233,62 @@ header .main-menu .item .item__contents .contents__texture p{
   color: #669900;
   margin: 4px 0 14px;
 
+}
+/*배지부분 내용추가-*/
+header .badges{
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge{
+  border-radius: 10px;
+  overflow: hidden; /*모서리 깎기*/
+  margin-bottom: 12px; /*아랫쪽 바깥여백*/
+  box-shadow: 4px 4px 10px rgba(0,0,0, .15);/*그림자 넣어주기*/
+  cursor: pointer;/*커서 올리면 손가락 모양으로 바뀌기*/
+}
+
+/* VISUAL */
+.visual{
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner{
+  height: 646px;
+}
+.visual .title{
+  position:absolute;
+  top: 88px; /* 위에서 88지점으로 배치 */
+  left: -10px; /* 부모요소기준으로 -10지점에 타이틀위치 */
+}
+.visual .title .btn{
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+.visual .cup1 .image{
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1 .text{
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2 .image{
+  position: absolute;
+  top: 0;
+  right: 162px;
+}
+.visual .cup2 .text{
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
 }

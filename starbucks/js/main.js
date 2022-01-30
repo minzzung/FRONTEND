@@ -16,3 +16,25 @@ searchIputEl.addEventListener('blur',function(){
   searchEl.classList.remove('focused');
   searchIputEl.setAttribute('placeholder', '');
 });
+
+const badgeEl = document.querySelector('header .badges');
+
+/*window : 화면 자체 출력 scroll 시 함수실행*/
+window.addEventListener('scroll', _.throttle(function(){
+  console.log(window.scrollY);
+  if (window.scrollY>500){
+    //배지숨기기
+    //gsap.to(요소, 지속시간, 옵션);
+    gsap.to(badgeEl, .6, {
+      //css 속성과 값 입력
+      opacity: 0,
+      display: 'none'
+    });
+  } else{
+    //배지보이기
+    gsap.to(badgeEl, .6, {
+      opacity: 1,
+      display : 'block'
+    });
+  }
+},300));
