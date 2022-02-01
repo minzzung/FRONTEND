@@ -292,3 +292,59 @@ header .badges .badge{
   bottom: 0;
   left: 275px;
 }
+
+.visual .fade-in{
+  opacity: 0; /*투명도 0퍼센트 :: 안보인다 -> .js에서 순차적으로 나타나게 해준다*/
+}
+
+/* NOTICE */
+.notice{
+  
+}
+.notice .notice-line {
+  position: relative;
+}
+.notice .notice-line .bg-left{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+.notice .notice-line .bg-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+}
+.notice .notice-line .inner{/* NOTICE의 높이 부분 제어 */
+  height: 62px;
+  
+  display: flex;
+}
+.notice .notice-line .inner__left{
+  width: 60%;
+  height: 100%;
+  background-color: #333;
+  display: flex;
+}
+.notice .notice-line .inner__left h2{ /*공지사항*/
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+.notice .notice-line .inner__left .swiper-container{
+  background-color: orange;
+  flex-grow: 1;
+}
+.notice .notice-line .inner__left .notice-line__more{
+
+}
+.notice .notice-line .inner__right{
+  width: 40%;
+  height: 100%;
+}
