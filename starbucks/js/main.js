@@ -44,7 +44,7 @@ window.addEventListener('scroll', _.throttle(function(){
 //이미지 순차적으로 나타나도록 하는 애니메이션 만들기
 const fadeEls = document.querySelectorAll('.visual .fade-in'); //4개가 반복되면서 실행되게한다.
 fadeEls.forEach(function(fadeEl, index){
-  gsap.to(fadeEl, 1, {
+  gsap.to(fadeEl, 1, { //gsap.to(요소, 지속시간(초), 옵션(객체데이터형태));
     delay: (index+1)*.7, //0.7, 1.4 , 2.1 ,2.7 순으로 애니메이션이 동작한다.
     opacity: 1
   });

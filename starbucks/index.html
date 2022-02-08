@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/> <!-- 기본적인 스타일 초기화-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
  
+  <!--SWIPER-->
   <!--구글 나눔 폰트 가져오기-->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
@@ -384,7 +385,7 @@
 
   <!--VISUAL-->
   <section class="visual">
-    <!--화면에 보여지는 내용을 가운데 정렬-->
+    <!--화면에 보여지는 내용을 가운데 정렬::inner클래스-->
     <div class="inner">
 
       <div class="title fade-in"><!--화면에 이미지 애니메이션 추가 : title에 fade-in 추가-->
@@ -400,30 +401,52 @@
         <img src="./images/visual_cup2_text.png" alt="스타벅스 카라멜 크럼블 모카" class="cup2 text"/>
       </div>
       <div class="fade-in">
-        <img src="./images/visual_spoon.png" alt="Spoon" class="spoon">
+        <img src="./images/visual_spoon.png" alt="Spoon" class="spoon"/>
       </div>
       
     </div>
   </section>
 
-
+  <!--NOTICE-->
   <section class="notice">
+    
+    <!--NOTICE LINE-->
     <div class="notice-line">
       <div class="bg-left"></div>
       <div class="bg-right"></div>
       <div class="inner">
-        <div class="inner__left"></div>
-        <h2>공지사항</h2>
-        <div class="swiper-container"></div>
-        <a href="javascript:void(0)" class="notice-line__more">
-          <div class="material-icons">add_circle</div>
-        </a>
-        <div class="inner__right"></div>
-        <h2>스타벅스 프로모션</h2>
-        <div class="toggle-promotion">
-          <div class="material-icons">upload</div>
+
+        <div class="inner__left">
+          <h2>공지사항</h2>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</a>
+            </div><!--원래 javascript:void에 링크 추가-->
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">[당첨자 발표] 2021 스타벅스 플래너 영수증 이벤트</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">스타벅스커피 코리아 애플리케이션 버전 업데이트 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="swiper">
+          <a href="javascript:void(0)" class="notice-line__more">
+            <span class="material-icons">add_circle</span>
+          </a>
+        </div>
+
+        <div class="inner__right">
+          <h2>스타벅스 프로모션</h2>
+          <div class="toggle-promotion open">
+            <div class="material-icons">upload</div>
+          </div>
+        </div>
+
     </div>
   </section>
 
