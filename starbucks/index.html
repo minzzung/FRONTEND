@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/> <!-- 기본적인 스타일 초기화-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
  
-  <!--SWIPER-->
+  
   <!--구글 나눔 폰트 가져오기-->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
@@ -36,6 +36,11 @@
   <link rel="stylesheet" href="./css/main.css"/> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!--SWIPER-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  
   <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -412,9 +417,9 @@
     
     <!--NOTICE LINE-->
     <div class="notice-line">
-      <div class="bg-left"></div>
-      <div class="bg-right"></div>
-      <div class="inner">
+      <div class="bg-left"></div> <!--왼쪽 배경-->
+      <div class="bg-right"></div> <!--오른쪽 배경-->
+      <div class="inner"> <!--화면 중간으로 정렬-->
 
         <div class="inner__left">
           <h2>공지사항</h2>
@@ -446,8 +451,34 @@
             <div class="material-icons">upload</div>
           </div>
         </div>
-
+      </div>
     </div>
+
+    <div class="promotion">
+      <div class="swiper-container">
+        <div class="swiper-slide">
+          <img src="./images/promotion_slide1.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!"/>
+          <a href="javascript:void(0)" class="btn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/promotion_slide2.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!"/>
+          <a href="javascript:void(0)" class="btn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/promotion_slide3.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!"/>
+          <a href="javascript:void(0)" class="btn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/promotion_slide4.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!"/>
+          <a href="javascript:void(0)" class="btn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/promotion_slide5.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!"/>
+          <a href="javascript:void(0)" class="btn">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+
   </section>
 
 </body>
