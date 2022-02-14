@@ -6,8 +6,8 @@
 <div markdown="1">
   
 ##  HTML 기본문법
-### 
-  `<태그>내용</태그>` : 요소   
+### -  요소
+  `<태그>내용</태그>`    
      
 ##  부모와 자식 관계의 이해
 ###  
@@ -16,19 +16,151 @@
    들여쓰기 : `tab` , 내어쓰기 : `Shift+Tab`   
      
 ##  빈 태그
-###  
-  `<태그/>` : 빈 태그   
-####
-   * 들여쓰기 : `tab` , 내어쓰기 : `Shift+Tab`
+###  - 빈 태그
+  `<태그/>`   
+###  - 기능을 확장한 태그 
+  `<태그 속성='값'>내용</태그>` 
+#### EX)
+  ```HTML
+  <img scr="./cat.jpg" alt="고양이"/> 
+  <!-- scr: 경로 alt: 이미지의 이름(대체 텍스트)-->
+  <input type = "text"/>
+  <!--type : 데이터의 타입 "text" :사용자에게 일반 텍스트를 입력받는다-->
+  <input type = "checkbox">
+  <!--type : 데이터의 타입 "text" :사용자에게 체크여부를 입력받는다-->
+  ```   
+##  글자와 상자
+### 요소가 화면에 출력되는 특성으로 크게 2가지로 구분할 수 있다.   
+#### - 인라인(inline)요소 : 글자를 만들기 위한 요소들.   
+  `<span></span>` : 콘텐츠 영역을 설정하는 용도(본질적으로 아무것도 나타나지 않음)
+  
+##### EX) 1 
+   <img src="https://user-images.githubusercontent.com/87464723/153816454-0807b875-67d2-46fa-969a-5e5121c89eba.png" width="200" height="100"/>    
+
+  ```HTML
+   <!--HTML-->
+   <span>Hello</span><!--띄어쓰기로 해석-->
+   <span>World</span>
+  ```    
+  ```CSS
+  /*CSS*/
+  body {
+    font-size: 100px; /*글자 사이즈 조절*/
+  }
+  ```    
+##### EX) 2  
+  `margin` : 요소의 외부 여백을 지정하는 css속성   
+  `padding`: 요소의 내부 여백을 지정하는 css속성    
+ <img src="https://user-images.githubusercontent.com/87464723/153817585-ff95af0b-3ea4-4eda-9c47-fb8cfd5ad342.png" width="300" height="150"/>   
+  
+  ```HTML
+  <!--HTML-->
+  <span style="margin: 20px 20px;">Hello</span>
+  <span style="margin: 20px 20px;">World</span>
+  
+  <!--*불가능 :: 글자요소 안에 상자요소-->
+  <span><div></div></span>
+  <!--*가능 :: 글자요소 안에 글자요소-->
+  <span><span></span></span>
+  ```   
+  
+#### - 블록(block) 요소 : 상자(레이아웃)를 만들기 위한 요소들.   
+  `<div></div>` : 콘텐츠 영역을 설정하는 용도(본질적으로 아무것도 나타나지 않음)
+
+##### EX) 1 
+   <img src="https://user-images.githubusercontent.com/87464723/153819297-e36b3488-4858-4836-be39-a8b12da09a85.png" width="400" height="100"/>  
+  
+  ```HTML
+   <!--HTML-->
+   <div>Hello</div><!--띄어쓰기로 해석-->
+   <div>World</div>
+  ```    
+##### EX) 2  
+  `width` : 요소의 가로 너비를 지정하는 css속성     
+  `height`: 요소의 새로 너비를 지정하는 css속성    
+ <img src="https://user-images.githubusercontent.com/87464723/153819585-02acff63-ed47-4cc7-be2d-f461ec3c005e.png" width="400" height="150"/>   
+     
+  ```HTML
+  <!--HTML-->
+  <div style="width: 100px;">Hello</div>
+  <div style="height: 40px;">World</div>
+
+  <!--*가능 :: 블록요소 안에 블록요소-->
+  <span><div></div></span>
+  <!--*가능 :: 블록요소 안에 인라인(글자)요소-->
+  <span><span></span></span>
+  ```       
 </div>
 </details>
 
 <details>
-<summary> HTML 핵심정리 </summary>
+<summary> HTML 핵심정리  </summary>
 <div markdown="1">
   
-----------
+## 핵심 요소 정리
+###
+  - `<div></div>` : (블록 상자 요소) 특별한 의미가 없고 구분을 위한 요소이다
+  - `<h1>오늘의 날씨</h1>` : (블록 상자 요소) 제목을 의미하는 요소이다. + 숫자가 작을수록 더 중요한 제목
+  - `<p>중부 집중호우, 12호 태풍 북상중..</p>` : (블록 상자 요소) 문장을 의미하는 요소이다.
+  - ` <img src="img/weather.jpg" alt"12호 태풍"/>  ` : (인라인 글자 요소) 이미지를 삽입하는 요소이다..
+  <img src="https://user-images.githubusercontent.com/87464723/153823868-1e1d2d85-5019-4ae5-b97d-75a992fed8b4.png" width="100" height="70"/>   
+   
+  ```HTML
+  <div>
+    <h1>오늘의 날씨</h1>
+    <img src="img/weather.jpg" alt"12호 태풍"/>
+  </div>
+  ```
+  
+  - `<ul></ul>` : (블록 상자 요소) 순서가 필요없는 목록의 집합을 의미한다.
+  - `<ol></ol>` : (블록 상자 요소) 순서가 필요한 목록의 집합을 의미한다.  
+  - `<li></li>` : (블록 상자 요소) 목록 내 각 항목을 의미한다.  
+  
+   <img src="https://user-images.githubusercontent.com/87464723/153824410-c6c4d6e4-e54d-42cd-9c67-a42d3d245449.png" width="120" height="120"/>   
+  
+   ```HTML
+  <ol>
+    <li>사과</li>
+    <li>딸기</li>
+    <li>수박</li>
+    <li>오렌지</li>
+  </ol>
+  ```
     
+  - `<a href="https://www.naver.com">NAVER</a>` : (인라인 글자 요소) 다른/같은 페이지로 이동하는 하이퍼링크를 지정하는 요소이다     
+  - `<span></span>` : (인라인 글자 요소) 특별한 의미가 없고 구분을 위한 요소이다   
+  
+  
+    ![image](https://user-images.githubusercontent.com/87464723/153824848-d893903a-3050-44ce-aa88-38a84a4ac3f9.png)
+
+  ```HTML
+  <a href="https://www.naver.com">NAVER</a>
+  <a href="https://www.google.com">GOOGLE</a>
+  ```
+  - 요소(텍스트)를 어떤 요소로 묶어주는 (감싸는) 행위를 Wrapping(래핑)이라고 부른다.
+  ![image](https://user-images.githubusercontent.com/87464723/153825403-611a4d0b-6be5-4639-9044-4d9ed786a2f0.png)
+  ```HTML
+  <!--HTML-->
+  <p>
+    동해물과 백두산이 마르고 닳도록
+    하느님이 보우하사 <span>우리나라</span>만세 
+  </p>
+  ```
+  ```CSS
+  /*CSS*/
+  body {
+    font-size: 100px; /*글자 사이즈 조절*/
+  }
+  span {
+    color : red;
+  }
+  ```   
+  - `</br>` : (인라인 글자 요소) 줄바꿈 요소이다
+  - `<input type="text" value="하하"> : 텍스트가 입력되는 부분에 "하하"가 미리 입력되어있다.
+  - `<input type="text" palceholder="이름을 입력하시오"> : 사용자가 입력할 값의 힌트
+  - `<input type="text" disabled /> : 입력 요소 비활성화
+  - `<label></label>` : (인라인 글자 요소) 라벨 가능 요소(input)의 제목을 의미한다.
+  
 </div>
 </details>
 
