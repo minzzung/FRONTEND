@@ -94,7 +94,7 @@
 </details>
 
 <details>
-<summary> HTML 핵심정리  </summary>
+<summary> HTML 핵심정리 (수정필요) </summary>
 <div markdown="1">
   
 ## 핵심 요소 정리
@@ -103,7 +103,7 @@
   - `<h1>오늘의 날씨</h1>` : (블록 상자 요소) 제목을 의미하는 요소이다. + 숫자가 작을수록 더 중요한 제목
   - `<p>중부 집중호우, 12호 태풍 북상중..</p>` : (블록 상자 요소) 문장을 의미하는 요소이다.
   - ` <img src="img/weather.jpg" alt"12호 태풍"/>  ` : (인라인 글자 요소) 이미지를 삽입하는 요소이다..
-  <img src="https://user-images.githubusercontent.com/87464723/153823868-1e1d2d85-5019-4ae5-b97d-75a992fed8b4.png" width="100" height="70"/>   
+  <img src="https://user-images.githubusercontent.com/87464723/153823868-1e1d2d85-5019-4ae5-b97d-75a992fed8b4.png" width="200" height="150"/>   
    
   ```HTML
   <div>
@@ -138,7 +138,8 @@
   <a href="https://www.google.com">GOOGLE</a>
   ```
   - 요소(텍스트)를 어떤 요소로 묶어주는 (감싸는) 행위를 Wrapping(래핑)이라고 부른다.
-  ![image](https://user-images.githubusercontent.com/87464723/153825403-611a4d0b-6be5-4639-9044-4d9ed786a2f0.png)
+  
+     <img src="https://user-images.githubusercontent.com/87464723/153825403-611a4d0b-6be5-4639-9044-4d9ed786a2f0.png" width="500" height="120"/>   
   ```HTML
   <!--HTML-->
   <p>
@@ -156,11 +157,33 @@
   }
   ```   
   - `</br>` : (인라인 글자 요소) 줄바꿈 요소이다
-  - `<input type="text" value="하하"> : 텍스트가 입력되는 부분에 "하하"가 미리 입력되어있다.
-  - `<input type="text" palceholder="이름을 입력하시오"> : 사용자가 입력할 값의 힌트
-  - `<input type="text" disabled /> : 입력 요소 비활성화
+  - `<input type="text" value="하하">` : 텍스트가 입력되는 부분에 "하하"가 미리 입력되어있다.
+  - `<input type="text" palceholder="이름을 입력하시오">` : 사용자가 입력할 값의 힌트
+  - `<input type="text" disabled />` : 입력 요소 비활성화 
   - `<label></label>` : (인라인 글자 요소) 라벨 가능 요소(input)의 제목을 의미한다.
   
+     <img src="https://user-images.githubusercontent.com/87464723/153827120-03ff5d11-bc26-49ca-9e66-e36f9639f69b.png" width="500" height="120"/>
+  ```HTML
+  <!--HTML-->
+  <input type=text value=김민동
+   placeholder="이름을 입력하세요" disabled/>
+   <br>
+  <input type="checkbox" />
+  Apple
+  <label>
+    <input type="checkbox" />
+    banana
+    <input type="radio" />
+    fruit
+  </label>
+  ```  
+ ##### table 부분 추가해야할 듯   
+  
+ ## 주석
+ ### - HTML
+    <!--내용삽입--> `Ctrl+/`, `Cmd+/`
+ ### - CSS
+    '/*내용삽입*/' `Ctrl+/`, `Cmd+/`
 </div>
 </details>
 
