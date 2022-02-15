@@ -177,7 +177,7 @@
     fruit
   </label>
   ```  
- ##### table 부분 추가해야할 듯   
+ ##### table   
   
  ## 주석
  ### - HTML
@@ -262,15 +262,98 @@
    
 ## CSS 선택자
 ### ◾ 기본 선택자
-  `*` 전체 선택자 : 모든 요소를 선택.   
-  
+  - `*` 전체 선택자 : 모든 요소를 선택.EX)
+  ```CSS
+  /*CSS*/
+  *{
+    color: red;
+  }
+  ```
+  - `태그이름`태그 선택자 : 태그이름이 li인 요소를 선택.EX)
+  ```HTML
+  <!--HTML-->
+  <li>사과</li>
+  <li>오렌지</li>
+  ```
+  ```CSS
+  /*CSS*/
+  li{
+    color: red;
+  }
+  ```   
+  - `.클래스속성의 값` 클래스 선택자 : HTML class 속성의 값이 li인 요소를 선택.EX)
+  ```HTML
+  <!--HTML-->
+  <li class = "orange">오렌지</li>
+  <span class = "orange">오렌지</span>
+  ```
+  ```CSS
+  /*CSS*/
+  .orange{
+    color: red;
+  }
+  ``` 
+  - `#id속성의 값` 아이디 선택자 : HTML it 속성의 값이 orange인 요소를 선택.
+  EX)
+  ```HTML
+  <!--HTML-->
+  <li id = "orange">오렌지</li>
+  <span class = "orange">오렌지</span>
+  ```
+  ```CSS
+  /*CSS*/
+  #orange{
+    color: red;
+  }
+  ``` 
 ### ◾ 복합
+  - `태그 이름과 클래스 속성의 값` 일치 선택자 : 선택자 span와 orange를 동시에 만족하는 요소 선택.
+  EX)
+  ```HTML
+  <!--HTML-->
+  <li id = "orange">오렌지</li>
+  <span class = "orange">오렌지</span>
+  ```
+  ```CSS
+  /*CSS*/
+  span.orange{
+    color: red;
+  }
+  ``` 
+  - `태그부모 >. 클래스 속성의 값` 자식 선택자 : 선택자 ul의 자식 요소 orange를 선택.
+  EX)
+  ```HTML
+  <!--HTML-->
+  <ul>
+    <li id = "orange">오렌지</li>
+  </ul>
+  ```
+  ```CSS
+  /*CSS*/
+  ul > .orange{
+    color: red;
+  }
+  ``` 
+  - `태그부모 >.클래스 속성의 값` 하위 선택자 : 선택자 div의 하위 요소 orange를 선택.
+  EX)
+  ```HTML
+  <!--HTML-->
+  <div>
+    <ul>
+      <li id = "orange">오렌지</li>
+    </ul>
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  div .orange{
+    color: red;
+  }
+  ``` 
 ### ◾ 가상 클래스
 ### ◾ 가상 요소
 ### ◾ 속성
-## CSS 가상클래스
-## CSS 선택자 가장요소
-## CSS 선택자 속성
+
 ## CSS 스타일상속  
 ## CSS 선택자 우선순위  
 </div>
