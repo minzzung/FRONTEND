@@ -191,8 +191,88 @@
 <summary> CSS 개요 </summary>
 <div markdown="1">
   
-----------
-    
+## 기본문법, 주석
+ ### ◾ 기본문법   
+#### 
+  CSS에서 하는 역할은 
+  html에서의 기본적인 구조를 실제로 보기좋게 꾸며주는 역할을 한다. 스타일을 작업한다.    
+  `선택자{ 속성:값; }` 선택자 : 스타일(css)을 적용할 대상   
+    ex) `div{   
+           color: red;   
+           margin: 20px;   
+         }`
+### ◾ 주석   
+#### /* 설명작성 */    
+   주석 시작은 '/*'로 주석 끝은 '*/'   
+   `Ctrl+/`, `Cmd+/`    
+  
+## CSS 선언 방식
+  
+### ◾ 내장 방식
+  : <style></style>의 내용으로 스타일을 작성하는 방식   
+  ```CSS
+  <style>
+  div{
+    color : red;
+    margin: 20px;
+  }
+  </style>
+  ```
+  
+### ◾ 인라인 방식
+  :요소의 style 속성에 직접 스타일을 작성하는 방식
+  ```HTML
+  <div style="color: red; margin:20px"></div>
+  ```
+
+### ◾ 링크 방식
+  : <link/>로 외부 CSS문서를 가져와서 연결하는 방식  
+  ```CSS
+  /* main.css */
+  div{
+    color : red;
+    margin: 20px;
+  }
+  ```
+  ```HTML
+  <!--HTML-->
+  link rel="stylesheet" href="./css/main.css">
+  ```  
+### ◾ @import 방식
+  : CSS의 @import규칙으로 CSS 문서 안에서 또 다른 CSS 문서를 가져와 연결하는 방식
+  ```HTML
+  <!--HTML-->
+  link rel="stylesheet" href="./css/main.css">
+  ```
+  ```CSS
+  /* main.css */
+  @import url("./box.css");
+  div{
+    color : red;
+    margin: 20px;
+  }
+  ```
+  ```
+  /* box.css */
+  div{
+    background-color : red;
+    padding: 20px;
+  }
+  ```
+   
+## CSS 선택자
+### ◾ 기본 선택자
+  `*` 전체 선택자 : 모든 요소를 선택.   
+  
+### ◾ 복합
+### ◾ 가상 클래스
+### ◾ 가상 요소
+### ◾ 속성
+## CSS 가상클래스
+## CSS 선택자 가장요소
+## CSS 선택자 속성
+## CSS 스타일상속  
+## CSS 선택자 우선순위  
 </div>
 </details>
 
