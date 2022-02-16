@@ -35,7 +35,7 @@
   `<span></span>` : 콘텐츠 영역을 설정하는 용도(본질적으로 아무것도 나타나지 않음)
   
 ##### EX) 1 
-   <img src="https://user-images.githubusercontent.com/87464723/153816454-0807b875-67d2-46fa-969a-5e5121c89eba.png" width="200" height="100"/>    
+  
 
   ```HTML
    <!--HTML-->
@@ -51,7 +51,7 @@
 ##### EX) 2  
   `margin` : 요소의 외부 여백을 지정하는 css속성   
   `padding`: 요소의 내부 여백을 지정하는 css속성    
- <img src="https://user-images.githubusercontent.com/87464723/153817585-ff95af0b-3ea4-4eda-9c47-fb8cfd5ad342.png" width="300" height="150"/>   
+
   
   ```HTML
   <!--HTML-->
@@ -68,7 +68,7 @@
   `<div></div>` : 콘텐츠 영역을 설정하는 용도(본질적으로 아무것도 나타나지 않음)
 
 ##### EX) 1 
-   <img src="https://user-images.githubusercontent.com/87464723/153819297-e36b3488-4858-4836-be39-a8b12da09a85.png" width="400" height="100"/>  
+
   
   ```HTML
    <!--HTML-->
@@ -78,7 +78,7 @@
 ##### EX) 2  
   `width` : 요소의 가로 너비를 지정하는 css속성     
   `height`: 요소의 새로 너비를 지정하는 css속성    
- <img src="https://user-images.githubusercontent.com/87464723/153819585-02acff63-ed47-4cc7-be2d-f461ec3c005e.png" width="400" height="150"/>   
+
      
   ```HTML
   <!--HTML-->
@@ -334,14 +334,16 @@
     color: red;
   }
   ``` 
-  - `태그부모 >.클래스 속성의 값` 하위 선택자 : 선택자 div의 하위 요소 orange를 선택.
+  - `조상요소태그 >.하위요소클래스 속성의 값` 하위(후손)선택자 : 선택자 div의 하위 요소 orange를 선택.
   EX)
   ```HTML
   <!--HTML-->
   <div>
     <ul>
-      <li id = "orange">오렌지</li>
+      <li id = "orange">오렌지</li><!--선택-->
     </ul>
+    <div>당근</div>
+    <span class="orange">오렌지</span><!--선택-->
   </div>
   ```
   ```CSS
@@ -350,12 +352,239 @@
     color: red;
   }
   ``` 
+  - `.클래스 속성의 값 + 다음태그` 인접 형제 선택자 : 선택자 ul의 다음 형제요소 li 태그 하나를 선택.
+  EX)
+  ```HTML
+  <!--HTML-->
+  <ul>
+    <li id = "orange">오렌지</li>
+    <li>망고</li>  <!--선택-->
+    <li>사과</li>
+  </ul>
+  ```
+  ```CSS
+  /*CSS*/
+  .orange + li {
+    color: red;
+  }
+  ``` 
+  - `.클래스 속성의 값 ~ 다음태그` 일반 형제 선택자 : 선택자 ul의 다음 형제요소 li 태그 모두 선택.
+  EX)
+  ```HTML
+  <!--HTML-->
+  <ul>
+    <li id = "orange">오렌지</li>
+    <li>망고</li>  <!--선택-->
+    <li>사과</li>  <!--선택-->
+  </ul>
+  ```
+  ```CSS
+  /*CSS*/
+  .orange ~ li {
+    color: red;
+  }
+  ``` 
 ### ◾ 가상 클래스
-### ◾ 가상 요소
-### ◾ 속성
+  
+  - `선택자:hover` 가상 클래스 선택자 hover : 선택자요소에 마우스 커서가 올라가 있는 동안 선택.
+  EX)  
+  ![image](https://user-images.githubusercontent.com/87464723/154208772-ee6f591a-decf-4134-a023-2968ff029824.png)
 
+  ```HTML
+  <!--HTML-->
+  <a href="https://www.naver.com">NAVER</a>
+  ```
+  ```CSS
+  /*CSS*/
+  a:hover {
+    color: red;
+  }
+  ``` 
+  
+  - `선택자:active` 가상 클래스 선택자 ACTIVE : 선택자 요소에 마우스를 클릭하고 있는 동안 선택.
+  EX)   
+  ![image](https://user-images.githubusercontent.com/87464723/154208772-ee6f591a-decf-4134-a023-2968ff029824.png)
+
+  ```HTML
+  <!--HTML-->
+  <a href="https://www.naver.com">NAVER</a>
+  ```
+  ```CSS
+  /*CSS*/
+  a:active {
+    color: red;
+  }
+  ```
+  
+  - `선택자:first-child` 가상 클래스 선택자 FIRST CHILD : 선택자 요소가 형제 요소 중 첫째라면 선택. 
+  EX) 선택 불가능  
+
+  ```HTML
+  <div class="fruits">
+    <span>딸기</span>
+    <span>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3>
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .fruits div:first-child {
+    color: red;
+  }
+  ```
+  
+  - `선택자:last-child` 가상 클래스 선택자 LAST CHILD : 선택자 요소가 형제 요소 중 막내라면 선택. 
+  EX) 
+
+  ```HTML
+  <div class="fruits">
+    <span>딸기</span>
+    <span>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3> <!--선택-->
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .fruits h3:last-child {
+    color: red;
+  }
+  ```
+  
+  - `선택자:nth-child(n)` 가상 클래스 선택자 NTH CHILD : 선택자 요소가 형제 요소 중 (n)째라면 선택. 
+  EX) 
+
+  ```HTML
+  <div class="fruits">
+    <span>딸기</span>
+    <span>수박</span><!--선택-->
+    <div>오렌지</div>
+    <p>망고</p><!--선택-->
+    <h3>사과</h3> 
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .fruits *:nth-child(2n) { <!--n은 0부터 시작-->
+    color: red;
+  }
+  ```
+  
+  - `선택자:not(선택제외요소)` 부정 선택자 NOT : 선택제외요소 아닌 선택자 요소 선택. 
+  EX) 
+
+  ```HTML
+  <div class="fruits">
+    <span>딸기</span>
+    <span>수박</span>
+    <div>오렌지</div> <!--선택-->
+    <p>망고</p>       <!--선택-->
+    <h3>사과</h3>     <!--선택-->
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .fruits *:not(span) { 
+    color: red;
+  }
+  ```
+  
+### ◾ 가상 요소
+  - `선택자::before` 가상요소 선택자 BEFORE : 선택자 요소의 내부 앞에 내용을 삽입.  
+  EX)  
+![image](https://user-images.githubusercontent.com/87464723/154216471-9e06f823-3d47-4516-8e6d-3ec77bcc53e7.png)
+
+  ```HTML
+  <div class="box">
+      Content!
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .box::before { 
+    /*이 부분에 내용 삽입*/
+    content: "앞!";
+  }
+  ```
+  - `선택자::after` 가상요소 선택자 AFTER : 선택자 요소의 내부 뒤에 내용을 삽입.  
+  EX)  
+![image](https://user-images.githubusercontent.com/87464723/154216716-89f65cdc-549f-4380-9d20-387d48ce7fb4.png)
+
+  ```HTML
+  <div class="box">
+      Content!
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .box::after { 
+    content: "뒤!";
+    /*이 부분에 내용 삽입*/
+  }
+  ```
+    
+### ◾ 속성
+ - `[선택자]` 속성 선택자 ATTR : 속성 disabled를 포함한 요소 선택.  
+  EX)  
+
+  ```HTML
+  <div class="box"></div>
+  <input type="text" value="Min"/>
+  <input type="password" value="4665"/>
+  <input type="text" value="jung" disabled/>  <!--선택-->
+  ```
+  ```CSS
+  /*CSS*/
+  [disabled] { 
+    color: red;
+  }
+  ```
+  - `[선택자]` 속성 선택자 ATTR=VALUE : 속성 type을 포함하고 값이 password 요소 선택.  
+  EX)  
+
+  ```HTML
+  <div class="box"></div>
+  <input type="text" value="Min"/>
+  <input type="password" value="4665"/> <!--선택-->
+  <input type="text" value="jung" disabled/> 
+  ```
+  ```CSS
+  /*CSS*/
+  [type="password"] { 
+    color: red;
+  }
+  ```
 ## CSS 스타일상속  
-## CSS 선택자 우선순위  
+### 스타일 상속   
+  :  선택된 클래스 요소에 css적용을 했을때 적용된 내용이 해당하는 요소의 자식요소, 하위요소까지 영향을 미치는 것
+  EX)  
+  ![image](https://user-images.githubusercontent.com/87464723/154218554-578867a9-59d2-403d-b5e0-8c20e847e020.png)   
+  ```HTML
+  <div class="ecosystem">생태계
+    <div class="animal">동물
+        <div class="tiger">호랑이</div>
+        <div class="lion">사자</div>
+        <div class="elephant">코끼리</div>
+    </div>
+    <div class="plant">식물</div>
+  </div>
+  ```
+  ```CSS
+  /*CSS*/
+  .animal { 
+    color: red;
+  }
+  ```
+## CSS 선택자 우선순위
+#### 우선순위  
+  : 같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언의 css속성을 우선 적용할 지 결정하는 방법  
+  1. 점수가 높은 선언이 우선  
+  2. 점수가 같으면, 가장 마지막에 해석된 선언이 우선   
+![image](https://user-images.githubusercontent.com/87464723/154220130-3ca6485f-40b3-4622-b61c-13f63e55ef28.png)
+  
 </div>
 </details>
 
