@@ -797,22 +797,144 @@ vh | 뷰포트 세로 너비의 백분율
 ### ◼ background-size
   요소의 배경 이미지 크기
 ####
-   - 0% 0% : 0%~100%
-   - 방향 : top, bottom, left, right, center 방향
+   - auto : 이미지의 실제 크기
    - 단위 : px, em, rem 등으로 단위 지정
    - cover : 비율을 유지, 요소의 더 넓은 너비에 맞춤
-   - 단위
+   - contain : 비율을 유지, 요소의 더 짧은 너비에 맞춤
+### ◼ background-attachment
+  요소의 배경 이미지 스크롤 특성
+####
+   - scroll : 이미지가 요소를 따라서 같이 스크롤
+   - fixed : 이미지가 뷰포트에 고정, 스크롤 X
+   - local : 요소 내 스크롤 시 이미지가 같이 스크롤
+
 ## 배치
+### ◼ position
+  요소의 위치 지정 기준
+####
+   - static : 기준 없음
+   - relative : 요소 자신을 기준
+   - absolute : 위치 상 부모 요소를 기준
+   - fixed : 뷰포트(브라우저)를 기준
+   - sticky : 스크롤 영역 기준
+### ◼ 요소 쌓임 순서 (Stack order)
+  어떤 요소가 사용자와 더 가깝게 있는지(위에 쌓이는지)결정
+####
+  1. 요소에 position 속성의 값이 있는 경우 위에 쌓임. (기본값 static 제외)  
+  2. 1번 조건이 같은 경우, z-index 속성의 숫자 값이 높을 수록 위에 쌓임.
+  3. 1번과 2번 조건까지 같은 경우, HTML의 다음 구조일 수록 위에 쌓임.
+### ◼ z-index
+  요소의 쌓임 정도를 지정
+####
+  - auto : 부모 요소와 동일한 쌓임 정도
+  - 숫자 : 숫자가 높을 수록 위에 쌓임
 ## 플렉스(정렬)
-## 전환
+### ◼ display
+  Flexcontainer 의 화면 출력(보여짐) 특성
+####
+  - flex : 블록 요소와 같이 flex container 정의
+  - inline-flex : 인라인 요소와 같이 flex container 정의
+
+### ◼ flex-direction
+  주 축을 설정
+####
+  - row : 행 축(좌=>우)
+  - row-reverse : 행 축(우=>좌)
+  - column : 열 축(위=>아래)
+  - column-reverse : 열 축 (아래=>위)
 ## 변환
+### ◼ flex-wrap
+  Flex Items 묶음(줄 바꿈)여부
+####
+  - nowrap : 묶음(줄 바꿈)없음
+  - wrap : 여러 줄로 묶음
+  - wrap-reverse : wrap의 반대 방향으로 묶음
+### ◼ justify-content
+  주 축의 정렬 방법
+####
+  - flex-start : Flex Items 을 시작점으로 정렬
+  - flex-end : Flex Items 을 끝점으로 정렬
+  - center : Flex Items 을 가운데 정렬
+  - space-between : 각 Flex Item 사이를 균등하게 정렬
+  - space-around : 각 Flex Item의 외부 여백을 균등하게 정렬
+### ◼ align-content
+  교차 축의 여러 줄 정렬 방법
+####
+  - stretch : Flex Items 을 시작점으로 정렬
+  - flex-start : Flex Items 을 시작점으로 정렬
+  - flex-end : Flex Items 을 끝점으로 정렬
+  - center : Flex Items 을 가운데 정렬
+  - space-between : 각 Flex Item 사이를 균등하게 정렬
+  - space-around : 각 Flex Item의 외부 여백을 균등하게 정렬
+### ◼ align-items
+  교차 축의 한 줄 정렬 방법
+####
+  - stretch : Flex Items를 교차 축으로 늘림
+  - flex-start : Flex Items를 각 줄의 시작점으로 정렬
+  - flex-end : Flex Items를 각 줄의 끝점으로 정렬
+  - center : Flex Items를 각 줄에 가운데 정렬
+  - baseline : Flex Items를 각 줄의 문자 기준선에 정렬
+### ◼ order
+  Flex Item의 순서
+####
+  - 0 : 순서없음
+  - 숫자 : 숫자가 작을 수록 먼저
+### ◼ flex-grow
+  Flex Item의 증가 너비 비율
+####
+  - 0 : 증가 비율 없음
+  - 숫자 : 증가 비율
+### ◼ flex-shrink
+  Flex Item의 감소 너비 비율
+####
+  - 1 : Flex Container 너비에 따라 감소 비율 적용
+  - 숫자 : 감소 비율
+### ◼ flex-basis
+  Flex Item의 공간 배분 전 기본 너비
+####
+  - auto : 요소의 Content 너비
+  - 단위 : px, em, rem 등 단위로 지정
+## 전환
+### ◼ transisiton-property
+  전환 효과를 사용할 속성 이름을 지정
+####
+  - all : 모든 속성에 적용
+  - 속성이름 : 전환 효과를 사용할 속성 이름 명시
+### ◼ transisiton-duration
+  전환 효과의 지속시간을 지정
+####
+  - 0s: 전환 효과 없음
+  - 시간 : 지속시간(S)을 지정
+### ◼ transisiton-timing-function
+  전환 효과의 타이밍함수를 지정
+####
+  - ease : 느리게 - 빠르게 - 느리게
+  - linear : 일정하게
+  - ease-in : 느리게 - 빠르게
+  - ease-out : 빠르게 - 느리게
+  - ease-in-out : 느리게 - 빠르게 - 느리게
+  - cubic-bezier(n,n,n,n) : 자신만의 값을 정의(0~1)
+  - steps(n) : n번 분할된 애니메이션
+### ◼ transisiton-delay
+  전환 효과가 몇 초 뒤에 시작할지 대기시간을 지정
+####
+  - 0s: 대기시간 없음
+  - 시간 : 대기시간(S)을 지정
 ## 띄움
-## 애니메이션
+### ◼ perspective
+  하위 요소를 관찰하는 원근 거리를 지정
+####
+  - 단위 : px등 단위로 지정
+### ◼ backface-visibility
+  3D변환으로 회전된 요소의 뒷면 숨김 여부
+####
+  - visible : 뒷면 보임
+  - hidden : 뒷면 숨김
+<!-- ## 애니메이션
 ## 그리드
 ## 다단
-## 필터
-
-    
+## 필터 -->
+   
 </div>
 </details>
 
@@ -821,18 +943,26 @@ vh | 뷰포트 세로 너비의 백분율
 <div markdown="1">
   
 ## 표기법
-###
-###   `dash - case(kebab-case)` 
-   '-'를 사용해 컴퓨터는 하나로 인식하는 단어를 사람이 보기에 여러 단어로 읽을 수 있게 구분
-###  `snake_case`              
-   '_'를 사용해 인식할 수 있는 여러 단어를 하나로 묶는다.
-###  `camelCase`   
-   낙타 표기법이라고도 하고 대문자로 여러 단어를 하나의 단어로 컴퓨터에게 인식 시켜줄 때 사용
-###  `ParcelCase` 
-   camelCase와 비슷하지만 처음 오는 문자가 대문자로 사용한다.
-###  `Zero-based Numbering`
-   특수한 경우를 제외하고 0부터 숫자를 시작한다.
-## 주석
+
+###  ◻ dash - case(kebab-case)
+   :  '-'를 사용해 컴퓨터는 하나로 인식하는 단어를 사람이 보기에 여러 단어로 읽을 수 있게 구분
+####
+   ex) the-quick-brown-fox-jumps-over-the-lazy-dog
+###  ◻ snake_case              
+   :  '_'를 사용해 인식할 수 있는 여러 단어를 하나로 묶는다.
+####
+   ex) the_quick_brown_fox_jumps_over_the_lazy_dog
+###  ◻ camelCase    
+   :  낙타 표기법이라고도 하고 대문자로 여러 단어를 하나의 단어로 컴퓨터에게 인식 시켜줄 때 사용
+####
+   ex) theQuickBrownFoxJumpsOverTheLazyDog
+###  ◻ ParcelCase 
+   :  camelCase와 비슷하지만 처음 오는 문자가 대문자로 사용한다.
+####
+   ex) TheQuickBrownFoxJumpsOverTheLazyDog
+###  ◻ Zero-based Numbering
+   :  특수한 경우를 제외하고 0부터 숫자를 시작한다.
+## 주석  
   - //한 줄 메모
   - /* 한 줄 메모 */
   - /**   
