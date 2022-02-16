@@ -388,7 +388,7 @@
   
   - `선택자:hover` 가상 클래스 선택자 hover : 선택자요소에 마우스 커서가 올라가 있는 동안 선택.
   EX)  
-  ![image](https://user-images.githubusercontent.com/87464723/154208772-ee6f591a-decf-4134-a023-2968ff029824.png)
+  ![image](https://user-images.githubusercontent.com/87464723/154221384-88efd8de-20be-41e5-b7cf-9a6efd382c09.png)
 
   ```HTML
   <!--HTML-->
@@ -403,8 +403,6 @@
   
   - `선택자:active` 가상 클래스 선택자 ACTIVE : 선택자 요소에 마우스를 클릭하고 있는 동안 선택.
   EX)   
-  ![image](https://user-images.githubusercontent.com/87464723/154208772-ee6f591a-decf-4134-a023-2968ff029824.png)
-
   ```HTML
   <!--HTML-->
   <a href="https://www.naver.com">NAVER</a>
@@ -495,7 +493,7 @@
 ### ◾ 가상 요소
   - `선택자::before` 가상요소 선택자 BEFORE : 선택자 요소의 내부 앞에 내용을 삽입.  
   EX)  
-![image](https://user-images.githubusercontent.com/87464723/154216471-9e06f823-3d47-4516-8e6d-3ec77bcc53e7.png)
+![image](https://user-images.githubusercontent.com/87464723/154221516-c9abfc29-9ae2-443b-8e47-876379022207.png)
 
   ```HTML
   <div class="box">
@@ -511,7 +509,7 @@
   ```
   - `선택자::after` 가상요소 선택자 AFTER : 선택자 요소의 내부 뒤에 내용을 삽입.  
   EX)  
-![image](https://user-images.githubusercontent.com/87464723/154216716-89f65cdc-549f-4380-9d20-387d48ce7fb4.png)
+![image](https://user-images.githubusercontent.com/87464723/154221624-98aeb4c2-7066-4daf-be25-b2e320fc11eb.png)
 
   ```HTML
   <div class="box">
@@ -561,7 +559,7 @@
 ### 스타일 상속   
   :  선택된 클래스 요소에 css적용을 했을때 적용된 내용이 해당하는 요소의 자식요소, 하위요소까지 영향을 미치는 것
   EX)  
-  ![image](https://user-images.githubusercontent.com/87464723/154218554-578867a9-59d2-403d-b5e0-8c20e847e020.png)   
+![image](https://user-images.githubusercontent.com/87464723/154221737-3bebdcf7-4b1d-43cf-916d-d0a201c9cf40.png) 
   ```HTML
   <div class="ecosystem">생태계
     <div class="animal">동물
@@ -583,7 +581,18 @@
   : 같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언의 css속성을 우선 적용할 지 결정하는 방법  
   1. 점수가 높은 선언이 우선  
   2. 점수가 같으면, 가장 마지막에 해석된 선언이 우선   
-![image](https://user-images.githubusercontent.com/87464723/154220130-3ca6485f-40b3-4622-b61c-13f63e55ef28.png)
+ 
+선택자 | 예시 | 점수  
+--|:--:|--:
+전체 선택자 | * | 0
+태그 선택자 | div | 1
+Class 선택자| .HELLO | 10
+ID 선택자 | #hello | 100   
+  
+ `!impoort 선택자`: 99999999 점   
+ `인라인 선택자` : 1000점  
+ `::before 가상의 요소` : 1점 (태그선택자로 볼 수 있다.)  
+ `:not() 부정 선택자`: 0점 (가상클래스이긴 하지만 부정선택자라 점수계산X) 
   
 </div>
 </details>
@@ -591,8 +600,218 @@
 <details>
 <summary> CSS 속성 </summary>
 <div markdown="1">
+ 
+##  박스 모델  
   
-----------
+### ◼ width, height   
+  요소의 가로/세로 너비  
+####
+   - auto(기본값) : 브라우저가 너비를 계산  
+   - 단위 : px, em, vw
+  
+### ◼ max-width, max-height   
+  요소가 커질 수 있는 최대 가로/세로 너비  
+####
+   - none : 최대 너비 제한 없음  
+   - auto : 브라우저가 너비를 계산  
+   - 단위 : px, em, vw 등 단위로 지정  
+  
+### ◼ min-width, min-height   
+  요소가 작아질 수 있는 최대 가로/세로 너비  
+####
+   - 0 : 최소 너비 제한 없음
+   - auto : 브라우저가 너비를 계산
+   - 단위 : px, em, vw 등 단위로 지정  
+#### 
+  〰 단위  
+기호 | 설명
+--|--
+px| 픽셀
+% | 상대적 백분율
+em | 요소의 글꼴 크기
+rem | 루트 요소(html)의 글꼴 크기
+vw | 뷰포트 가로너비의 백분율
+vh | 뷰포트 세로 너비의 백분율
+
+### ◼ margin   
+  외부여백(공간)을 지정하는 단축 속성 (음수 사용 가능)
+####
+   - 0 : 최소 너비 제한 없음
+   - auto : 브라우저가 여백을 계산 ( 가운데정렬에서 활용 )
+   - 단위 : px, em, vw 등 단위로 지정  
+   - % : 부모 요소의 가로 너비에 대한 비율로 지정
+
+### ◼ padding   
+  외부여백(공간)을 지정하는 단축 속성 (요소 크기가 커진다.)
+####
+   - 0 : 내부 여백 없음
+   - 단위 : px, em, vw 등 단위로 지정  
+   - % : 부모 요소의 가로 너비에 대한 비율로 지정
+  
+### ◼ border-width
+  요소 테두리 선의 두께
+####
+   - medium : 중간 두께
+   - thin : 얇은 두께
+   - thick : 두꺼운 두께
+   - 단위 : px, em, vw 등 단위로 지정  
+  
+### ◼ border-style
+  요소 테두리 선의 종류
+####
+   - none : 선없음
+   - solid : 실선(일반 선)
+   - dashed : 파선
+   - dotted : 점선
+   - double : 두 줄 선
+   - groove : 홈이 파여있는 모양
+   - ridge : 솟은 모양(groove의 반대)
+   - inset : 요소 전체가 들어간 모양
+   - outset : 요소 전체가 나온 모양
+
+### ◼ border-color
+  요소 테두리 선의 색상을 지정하는 단축 속성
+####
+   - black : 검정색
+   - tortkd : 선의 색상
+   - transparent : 투명
+  
+### ◼ border-radius
+  요소 모서리를 둥글게 깎음
+####
+   - 0 : 둥글게 없음
+   - 단위: px, em, vw등 단위로 지정
+
+### ◼ box-sizing
+  요소 크기 계산 기준을 지정
+####
+   - content-box : 요소의 내용(content)로 크기 계산
+   - border-box : 요소의 내용 +padding + border로 크기 계산
+  
+### ◼ overflow
+  요소의 크기 이상으로 내용이 넘쳤을 때, 보여짐을 제어하는 단축 속성
+####
+   - visible : 넘친 내용을 그대로 보여줌
+   - hiddent : 넘친 내용을 잘라냄
+   - scroll : 넘친 내용을 잘라냄, 스크롤바 생성
+   - auto : 넘친 내용이 있는 경우에만 잘라내고 스크롤바 생성
+### ◼ display
+  - 각 요소에 이미 지정되어 있는 값
+    - block : 상자(레이아웃) 요소
+    - inline : 글자 요소
+    - inline-block : 글자 + 상자 요소
+  - 따로 지정해서 사용하는 값
+    - flex : 플렉스 박스(1차원 레이아웃)
+    - grid : 그리드 (2차원 레이아웃)
+    - none : 보여짐 특성없음, 화면에서 사라짐
+### ◼ opacity
+  요소 투명도
+####
+   - 1 : 불투명
+   - 0~1 : 0부터 1사이의 소수점 숫자
+  
+## 글꼴
+### ◼ font-style
+  글자의 기울기
+####
+   - normal : 기울기 없음
+   - italic : 이텔릭체
+   - oblique : 기울어진 글자
+  
+### ◼ font-weight
+  글자의 두께(가중치)
+####
+   - normal,400 : 기울기 없음
+   - bold,700 : 두껍게
+   - boler : 상위(부모) 요소보다 더 두껍게
+   - lighter : 상위(부모) 요소보다 더 얇게
+   - 100~900 : 100 단위의 숫자 9개, normal과 bold 이외 두께
+### ◼ font-size
+  글자의 크기
+####
+   - 16px : 기본 크기
+   - 단위 : px, em, rem 등 단위로 지정
+   - % : 부모 요소의 폰트 크기에 대한 비율
+   - smaller : 상위(부모) 요소보다 더 작게
+   - large : 상위(부모) 요소보다 더 크게
+   - xx-small~xx-large : 가장 작은 크기 ~ 가장 큰크기까지, 7단계의 크기를 지정
+### ◼ line-height
+  한 줄의 높이, 행간과 유사
+####
+   - normal : 브라우저의 기본 정의를 
+   - 숫자 : 요소의 글꼴 크기의 배수로 지정
+   - 단위 : px, em, vw 등 단위로 지정  
+   - % : 요소의 글꼴 크기의 비율로 지정
+## 문자
+### ◼ color
+  글자의 색상
+####
+   - rgb(0,0,0) : 검정색 
+   - 색상 : 기타 지정 가능한 색상 
+### ◼ text-align
+  문자의 정렬 방식
+####
+   - left : 왼쪽 정렬
+   - right : 오른쪽 정렬
+   - center : 가운데 정렬
+   - justify : 양쪽 정렬
+### ◼ text-decoration
+  문자의 장식(선)
+####
+   - none : 장식없음
+   - underline : 밑줄
+   - overline : 윗줄
+   - line-through : 중앙 선
+### ◼ text-indent
+  첫줄의들여쓰기
+####
+   - 0 : 장식없음
+   - 단위 : px, em, rem 등 단위로 지정  
+   - % : 요소의 가로 너비의 비율로 지정
+  
+## 배경
+  
+### ◼ background-color
+  요소의 배경 색상
+####
+   - transparent : 투명함
+   - 색상 : 지정 가능한 색상
+### ◼ background-image
+  요소의 배경 이미지 삽입
+####
+   - none : 투명함
+   - url("경로") : 이미지 경로
+### ◼ background-repeat
+  요소의 배경 이미지 반복
+####
+   - repeat : 이미지를 수직, 수평 반복
+   - repeat-x : 이미지를 수평 반복
+   - repeat-y : 이미지를 수직 반복
+   - no-repeat : 반복 없음
+### ◼ background-position
+  요소의 배경 이미지 위치
+####
+   - 0% 0% : 0%~100%
+   - 방향 : top, bottom, left, right, center 방향
+   - 단위 : px, em, rem 등으로 단위 지정
+### ◼ background-size
+  요소의 배경 이미지 크기
+####
+   - 0% 0% : 0%~100%
+   - 방향 : top, bottom, left, right, center 방향
+   - 단위 : px, em, rem 등으로 단위 지정
+   - cover : 비율을 유지, 요소의 더 넓은 너비에 맞춤
+   - 단위
+## 배치
+## 플렉스(정렬)
+## 전환
+## 변환
+## 띄움
+## 애니메이션
+## 그리드
+## 다단
+## 필터
+
     
 </div>
 </details>
