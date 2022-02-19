@@ -8,16 +8,19 @@ body{
   height: 3000px;
 }
 img{
+  /* img(인라인 요소) 하단에 Baseline 공백을 제거 */
   display: block;
 }
-a{ /*밑줄제거*/
+a { /*밑줄제거*/
   text-decoration: none;
 }
+
 .inner{
   width: 1100px;
   margin: 0 auto; /* 위아래 값은 없고 좌우는 브라우저가 자동으로 설정-> 가운데 정렬*/ 
   position: relative;
 }
+/*BUTTON*/
 .btn{ /* 자세히 보기 버튼 스타일 */ 
   width: 130px;
   padding: 10px;
@@ -79,7 +82,7 @@ header{
   z-index: 9;/*쌓임순서추가*/
 }
 
-header >.inner{ /*inner라는 공통적인 요소를 분리시켜줄 것이다*/
+header > .inner{ /*inner라는 공통적인 요소를 분리시켜줄 것이다*/
   /*header의 자식요소인 inner부분만 높이가 120픽셀*/
   height: 120px;
 }
@@ -108,7 +111,7 @@ header .sub-menu ul.menu li{
 }
 header .sub-menu ul.menu li::before{ /*::는 가상요소 선택자*/
   content: "";
-  display: block;
+  /* display: block; */
   width: 1px;
   height: 12px;
   background-color: #e5e5e5;
@@ -117,6 +120,7 @@ header .sub-menu ul.menu li::before{ /*::는 가상요소 선택자*/
   bottom: 0;
   margin: auto;
 }
+
 header .sub-menu ul.menu li:first-child::before{
   display: none; /*젤 앞 구분선 삭제*/
 }
@@ -162,6 +166,8 @@ header .sub-menu .search .material-icons {/*돋보기 모양 속성추가*/
   transition: .4s;
 }
 
+
+
 header .sub-menu .search.focused .material-icons {
   /*focus가 된 상태에서는 아이콘이 안보이게 하겠다*/
   opacity: 0;
@@ -172,10 +178,8 @@ header .main-menu {
   position: absolute; /*위치상에 부모요소를 기준으로 배치*/
   bottom: 0px;
   right: 0px;
+  /* z-index: 1; */
   display: flex; /*메뉴들을 수평으로 만들기*/
-}
-header .main-menu .item {
-  
 }
 header .main-menu .item .item__name{
   padding: 10px 20px 34px 20px;/*여백생성(시계방향)*/
@@ -193,6 +197,8 @@ header .main-menu .item .item__contents{
   left: 0;
   display: none;
 }
+
+
 header .main-menu .item:hover .item__contents{
   display: block;
 }
@@ -203,7 +209,7 @@ header .main-menu .item .item__contents .contents__menu > ul{ /*바로 자식에
   display: flex;
   padding: 20px 0;
 }
-header .main-menu .item .item__contents .contents__menu > ul >li{
+header .main-menu .item .item__contents .contents__menu > ul > li{
   width: 220px;
 }
 header .main-menu .item .item__contents .contents__menu > ul > li h4{
@@ -232,8 +238,9 @@ header .main-menu .item .item__contents .contents__texture h4{
 header .main-menu .item .item__contents .contents__texture p{
   color: #669900;
   margin: 4px 0 14px;
-
 }
+
+
 /*배지부분 내용추가-*/
 header .badges{
   position: absolute;
@@ -298,14 +305,12 @@ header .badges .badge{
 }
 
 /* NOTICE */
-.notice {
-  
-}
+
 .notice .notice-line {
   position: relative;
 }
 .notice .notice-line .bg-left{
-  position: absolute;
+  position: absolute;/* 부모 요소 기준으로 배치를 하겠다 */
   top: 0;
   left: 0;
   width: 50%;
@@ -322,6 +327,7 @@ header .badges .badge{
 }
 .notice .notice-line .inner{/* NOTICE의 높이 부분 제어 */
   height: 62px;
+  z-index: 1;
   display: flex;
 }
 .notice .notice-line .inner__left{
@@ -337,14 +343,22 @@ header .badges .badge{
   font-weight: 700;
   margin-right: 20px;
 }
-.notice .notice-line .inner__left .swiper-container {
+.notice .notice-line .inner__left .swiper-container {/*공지사항과  더보기 버튼 사이 공간*/
   flex-grow: 1;/*최대한 늘리기*/
-  height: 62;
+  height: 62px;
 
 }
-.notice .notice-line .inner__left .notice-line__more {
-  width: 62;
-  height: 62;
+.notice .notice-line .inner__left .swiper-slide {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+.notice .notice-line .inner__left .swiper-slide a {
+  color: #fff;
+}
+.notice .notice-line .inner__left .notice-line__more {/*공지사항라인의 더보기 버튼*/
+  width: 62px;
+  height: 62px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -356,15 +370,15 @@ header .badges .badge{
 .notice .notice-line .inner__right{
   width: 40%;
   height: 100%;
-  font-weight: flex;
-  justify-content: flex; /*수평의 끝점으로 밀어버리겠다*/
-  align-items: center;
+  display: flex;
+  justify-content: flex-end; /*수평의 끝점으로 밀어버리겠다 ::오른쪽 정렬*/
+  align-items: center;/*수직가운데 정렬*/
 }
 .notice .notice-line .inner__right h2{
-  font-size: 17x;
-  font-weight: 700px;
+  font-size: 17px;
+  font-weight: 700; /* px을 쓰지않음 */
 }
-.notice .notice-line .inner__right .toggle-promotion{
+.notice .notice-line .inner__right .toggle-promotion{  /*스타벅스 프로모션*/
   width: 62px;
   height: 62px;
   cursor: pointer;
@@ -374,4 +388,193 @@ header .badges .badge{
 }
 .notice .notice-line .inner__right .toggle-promotion .material-icons{
   font-size: 30px;
+}
+
+
+/*PROMOTION*/
+.notice .promotion {
+  /*width: auto;*/
+  height: 693px;  /*전체 공간의 총 높이*/
+  background-color: #f6f5ef;
+  position: relative;
+  overflow: hidden;
+  transition: height .4s;
+}
+.notice .promotion.hide {
+  height: 0;/*높이를 0픽셀로 축소시며버림*/
+}
+.notice .promotion .swiper-container {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  position: absolute;
+  top: 40px;
+  left: 50%; /* 위치를 50퍼에서 오른쪽 끝까지로 했지만 */
+  margin-left: calc((819px * 3 + 20px) / -2);/* 왼쪽으로 끌어와서 중간 지점에 위치 */
+}
+.notice .promotion .swiper-slide {
+  position: relative;/*구조상 부모요소를 위치상의 부모요소로 맞춤 *2 */
+  opacity: .5; /* 전체 사진 요소들 투명도 설정 */
+  transition: opacity 1s;/* 투명도를 자연스럽게 바꿔준다 */
+}
+.notice .promotion .swiper-slide-active {
+  opacity: 1; /* 가운데 사진 요소만 투명도 제거 */
+}
+.notice .promotion .swiper-slide .btn {
+  /*width: 130px;*/
+  position: absolute; /*부모요소 기준으로 버튼 배치 *1 */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: transparent;/* 투명한 색을 사용하겠다 */
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0;/* 가장 마지막 동그라미 우측에는 여백을 만들지 않겠다 */
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");/* 페이지 부분에 on이라고 불이 들어와있다 */
+}
+.notice .promotion .swiper-prev, /* 쉼표로 다중 선택자 */
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute; /* 부모요소를 기준으로 배치하겠다 */
+  /* Swiper Container 높이의 절반만큼 끌어올림 */
+  /* 버튼 높이의 절반만큼 추가로 끌어올림 */
+  top: 300px;
+  z-index: 1; /* 슬라이드요소보다 더 위에 쌓이게 한다 */
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/*REWARDS*/
+.rewards { 
+  position: relative;
+}
+.rewards .bg-left { 
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rewards .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rewards .inner { /*배경이미지 삽입*/
+  background-image: url("../images/rewards.jpg");
+  height: 241px; /*높이값*/
+}
+.rewards .btn-group {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.rewards .btn-group .btn.sign-up {
+  margin-right: 10px;
+}
+.rewards .btn-group .btn.sign-in {
+  width: 110px;
+}
+.rewards .btn-group .btn.gift {
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+
+/*YOUTUBE VIDEO*/
+.youtube {
+  position: relative;
+  height: 700px;
+  background-color: #333;
+  overflow: hidden;
+}
+.youtube .youtube__area {
+  width: 1920px;
+  position: absolute;
+  /* 16비율 */
+  left: 50%;
+  margin-left: calc(1920px / -2);
+  /* 9비율 */
+  top: 50%;
+  margin-top: calc(1920px * 9 / 16 / -2);
+}
+.youtube .youtube__area::before {
+  content: "";
+  display: block;
+  /* 16:9 영상 비율로 요소 크기 만들기! */
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+.youtube .youtube__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.3);
+  background-image: url("../images/video_cover_pattern.png");
+}
+#player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.youtube .inner {
+  height: inherit;
+}
+.youtube .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.youtube .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
 }
