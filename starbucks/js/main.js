@@ -1,27 +1,34 @@
+
+// 검색창요소 .search를 찾는다.
 const searchEl = document.querySelector('.search'); /* 클래스가 search인 요소 찾아서 변수에 할당*/
 const searchIputEl = searchEl.querySelector('input');
 
+// 검색창 요소를 클릭하면 실행
 searchEl.addEventListener('click',function(){
   // serch를 가지고 있는 div요소를 클릭하면 어떤 함수를 실행
   searchIputEl.focus();
 });
 
+// 검색창 요소 내부 실제 input 요소에 포커스 되면 실행
 searchIputEl.addEventListener('focus',function(){
   searchEl.classList.add('focused');
   searchIputEl.setAttribute('placeholder', '통합검색');
 });
 
-//input 요소에 포커스가 해제됐을 때
+//검색창 요소 내부 input 요소에 포커스가 해제됐을 때 실행
 searchIputEl.addEventListener('blur',function(){
   searchEl.classList.remove('focused');
   searchIputEl.setAttribute('placeholder', '');
 });
 
+//페이지 스크롤에 영향을 받는 요소 검색
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
+
 /*window : 화면 자체 출력 scroll 시 함수실행*/
 window.addEventListener('scroll', _.throttle(function(){
   console.log(window.scrollY);
+  //페이지 스크롤의 위치가 500px이 넘으면
   if (window.scrollY>500){
     //배지숨기기
     //gsap.to(요소, 지속시간, 옵션);
@@ -30,11 +37,11 @@ window.addEventListener('scroll', _.throttle(function(){
       opacity: 0,
       display: 'none'
     });
-    // 상단으로 스크롤 버튼 보이기!
+    // 상단으로 스크롤 버튼 보이기
     gsap.to(toTopEl, .2, {
       x: 0
-    })
-
+    });
+    //페이지 스크롤의 위치가 500px이 넘지 않으면
   } else{
     //배지보이기
     gsap.to(badgeEl, .6, {
@@ -49,8 +56,9 @@ window.addEventListener('scroll', _.throttle(function(){
 },300));
 // _.throttle(함수, 시간)
 
-const toTopEl = document.querySelector('#to-top');
+//상단으로 스크롤 버튼을 클릭하면
 toTopEl.addEventListener('click',function(){
+  //페이지 위치를 최상단으로 부드럽게(.7초동안)이동
   gsap.to(window, .7,{
     scrollTo : 0
   });
@@ -60,7 +68,8 @@ toTopEl.addEventListener('click',function(){
 //이미지 순차적으로 나타나도록 하는 애니메이션 만들기
 const fadeEls = document.querySelectorAll('.visual .fade-in'); //4개가 반복되면서 실행되게한다.
 fadeEls.forEach(function(fadeEl, index){
-  gsap.to(fadeEl, 1, { //gsap.to(요소, 지속시간(초), 옵션(객체데이터형태));
+  //gsap.to(요소, 지속시간(초), 옵션(객체데이터형태));
+  gsap.to(fadeEl, 1, { 
     delay: (index+1)*.7, //0.7, 1.4 , 2.1 ,2.7 순으로 애니메이션이 동작한다.
     opacity: 1
   });
@@ -70,9 +79,9 @@ fadeEls.forEach(function(fadeEl, index){
 
 //new Swiper(선택자, 옵션)
 new Swiper('.notice-line .swiper-container', {
-  direction: 'vertical',
-  autoplay: true,
-  loop: true
+  direction: 'vertical', // 수직 슬라이드
+  autoplay: true, // 자동 재생 여부
+  loop: true // 반복 재생 여부
 });
 
 new Swiper('.promotion .swiper-container', {
@@ -95,13 +104,13 @@ new Swiper('.promotion .swiper-container', {
 });
 
 new Swiper('.awards .swiper-container', {
-  autoplay: true,
-  loop : true,
-  spaceBetween : 30,
-  slidesPerView: 5,
-  navigation: {
-    prevEl : '.awards .swiper-prev',
-    nextEl : '.awards .swiper-next'
+  autoplay: true,  // 자동 재생 여부
+  loop : true,     // 반복 재생 여부
+  spaceBetween : 30, // 슬라이드 사이 여백
+  slidesPerView: 5,// 한 번에 보여줄 슬라이드 개수
+  navigation: {  // 슬라이드 이전/다음 버튼 사용 여부
+    prevEl : '.awards .swiper-prev', // 이전 버튼 선택자
+    nextEl : '.awards .swiper-next'  // 다음 버튼 선택자
   }
 });
 

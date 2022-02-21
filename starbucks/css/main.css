@@ -1,4 +1,4 @@
-/* ----COMMON---- */
+/*COMMON*/
 body{
   color: #333;
   font-size: 16px;
@@ -14,11 +14,14 @@ a { /*밑줄제거*/
   text-decoration: none;
 }
 
+/*INNER*/
 .inner{
   width: 1100px;
   margin: 0 auto; /* 위아래 값은 없고 좌우는 브라우저가 자동으로 설정-> 가운데 정렬*/ 
   position: relative;
 }
+
+
 /*BUTTON*/
 .btn{ /* 자세히 보기 버튼 스타일 */ 
   width: 130px;
@@ -70,6 +73,8 @@ a { /*밑줄제거*/
   color: #333;
   border-color: #FFF ;
 }
+
+/*BACK TO POSITION*/
 .back-to-position {
   opacity: 0; /* 투명한 상태이자 안보이는 상태 */
   transition: 1s;
@@ -96,7 +101,8 @@ a { /*밑줄제거*/
 .show .back-to-position.delay-3 {
   transition-delay: .9s;
 }
-/* ----HEADER---- */ 
+
+/*HEADER*/ 
 header{
   width: 100%;/*페이지를 최대한 활용 많이 할 수 있도록*/
   background-color: #f6f5f0;
@@ -264,9 +270,7 @@ header .main-menu .item .item__contents .contents__texture p{
   margin: 4px 0 14px;
 }
 
-
-/*배지부분 내용추가-*/
-header .badges{
+header .badges{/*배지부분 내용추가-*/
   position: absolute;
   top: 132px;
   right: 12px;
@@ -279,7 +283,7 @@ header .badges .badge{
   cursor: pointer;/*커서 올리면 손가락 모양으로 바뀌기*/
 }
 
-/* ----VISUAL---- */
+/*VISUAL*/
 .visual{
   margin-top: 120px;/*헤더의 이너부분의 높이값*/
   background-image: url("../images/visual_bg.jpg");
@@ -323,13 +327,12 @@ header .badges .badge{
   bottom: 0;
   left: 275px;
 }
-
 .visual .fade-in{
   opacity: 0; /*투명도 0퍼센트 :: 안보인다 -> .js에서 순차적으로 나타나게 해준다*/
 }
 
 /* NOTICE */
-
+/* NOTICE LINE*/
 .notice .notice-line {
   position: relative;
 }
