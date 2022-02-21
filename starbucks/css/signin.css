@@ -1,0 +1,86 @@
+.signin {
+  margin-top: 120px;
+  padding: 100px 0 150px;
+  background-image: url("../images/signin_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center; /*배경이미지를 중간에 두겠다*/
+  background-attachment: fixed;  /*요소와 같이 스크롤되지않고 뷰포트에 고정되서 스크롤*/
+  background-size: cover; /* 뷰포트에 더 넓은 이미지가 맞춰지도록 맞춰준다. */
+}
+
+.signin h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700; /*글자의 크기는 두껍게*/
+  text-align: center; /*문자의 정렬은 가운데 정렬*/
+  margin-bottom: 24px; /*h1의 아랫쪽 외부 여백은 24px*/
+}
+
+.signin__card {
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: #F6F5F0;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+  color: #333;
+}
+
+.signin__card h2{ /*card 에 들어있는 후손선택자 h2*/
+  padding: 30px; /*내부여백이 위아래 30px*/
+  font-size: 18px; /* 글자의 크기는 18px */
+  text-align: center;/* 문자 정렬 */
+  border-bottom: 1px solid #ddd; /*테두리선 1px의 일반 실선 선색깔*/
+}
+
+.signin__card h2 strong {
+  font-weight: 700;
+  color: #006633;
+}
+
+.signin__card form{/*sign__card 내부에 form 태그*/
+  padding: 30px 22px; /*내부여백 위아래 좌우*/
+}
+.signin__card form input {/*input 태그 텍스트 패스워드 서브밋인풋요소*/
+  width: 100%;
+  margin-bottom: 12px; /*바깥쪽 아래여백은 12px*/
+  padding: 15px;       /*내부여백은 위아래좌우 15px*/
+  border: 1px solid #ddd;/*테두리선*/
+  border-radius: 4px;/*모서리를 둥글게 깎는다*/
+  outline: none; /*테두리선 사용하지 않겠다*/
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.signin__card form [type="submit"] {/*대괄호는 속성선택자(로그인버튼)*/
+  background-color: #006633;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.signin__card form p {/* form 태그 내부에 주의사항을 명시해놓은 p태그 */
+  font-size: 12px;
+  color: #006633;
+  text-align: center;
+}
+
+.signin__card .actions {
+  display: flex; /* a 태그들이 수평 정렬될 수 있도록*/
+  border-top: 1px solid #ddd;
+}
+.signin__card .actions a { /*가로 너비가 1:1:1비율로 가로로 버튼이 만들어지는 개념*/
+  flex-grow: 1; /*요소의 증가 너비가 1비율*/
+  flex-basis: 0;/*기본 너비는 0으로 없는 상태*/
+  text-align: center;
+  padding: 20px;/*내부여백*/
+  color: #555;
+  font-size: 14px;
+  border-right: 1px solid #ddd;
+}
+
+.signin__card .actions a:last-child {
+  border-right: none; /*마지막 태그는 우측 테두리선을 사용하지않겠ㄷㅏ*/
+}
+
+.signin__card .actions a:hover { /*a태그 내부에 가상클래스 hover을 추가*/
+  text-decoration: underline;/*버튼에 마우스를 올리면 underline */
+}
