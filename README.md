@@ -1151,6 +1151,7 @@ vh | 뷰포트 세로 너비의 백분율
  ### - HTML 클래스 속성의 
    `요소__일부분` : Underscore(Lodash) 기호로 요소의 일부분을 표시   
    `요소--상태`   : Hyphen(Dash) 기호로 요소의 상태를 표시 
+  `요소--상태`   : Hyphen(Dash) 기호로 요소의 상태를 표시 
     
 </div>
 </details>
